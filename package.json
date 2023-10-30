@@ -1,0 +1,28 @@
+{
+  "name": "node_kafka_client",
+  "version": "1.0.0",
+  "description": "demo of node client running agaist local kafka",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test",
+    "start": "node src/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephh/node-kafka-client.git"
+  },
+  "keywords": [
+    "node",
+    "kafka"
+  ],
+  "author": "joseph jobbings",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josephh/node-kafka-client/issues"
+  },
+  "homepage": "https://github.com/josephh/node-kafka-client#readme",
+  "dependencies": {
+    "kafka-node": "^5.0.0"
+  }
+}

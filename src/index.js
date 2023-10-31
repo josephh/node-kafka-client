@@ -12,15 +12,18 @@ let consumer = new Consumer(
   // consume from topic as per following options...
   client, 
   [ { topic: 'demo', partition: 0, offset: "latest" /* offset defaults to 0 */ } ], 
-  { autoCommit: true, groupId: 'kafka-node-joe' }
+  { autoCommit: true, groupId: 'kafka-demo-group' }
 ) 
 
-admin.listGroups((err, res) => {
-  console.log('consumerGroups', res);
-});
+// admin.listGroups((err, res) => {
+//   console.log('consumerGroups', res);
+// });
 
 consumer.on('message', function (message) {
-    console.log(message);
+  var key = message.key, value = message.value
+  console.log(`key = ${JSON.parse(key).payload}`)
+  console.log(`value :: agent = ${JSON.parse(value).payload.agent}`)
+  console.log(`value :: request = ${JSON.parse(value).payload.request}\n`)
 })
  .on('error', function (err) {
      console.log(err)
